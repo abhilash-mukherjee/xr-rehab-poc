@@ -14,4 +14,15 @@ public static class SessionDataHelper
         };
         return sessionData;
     }
+    public static SessionData GetEmptySession()
+    {
+        var sessionData = new SessionData
+        {
+            sessionCode = "",
+            language = "",
+            durationInSeconds = 0,
+            speedOfSession = 0
+        };
+        return sessionData;
+    }
 }

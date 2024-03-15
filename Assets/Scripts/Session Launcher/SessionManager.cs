@@ -19,7 +19,21 @@ public class SessionManager : MonoBehaviour
         }
         var sessionData = SessionDataHelper.GetSessionData(sessionCode);
         currentSessionData = sessionData;
+        GameManager.instance.UnloadSceneAsync(0);
+        GameManager.instance.LoadSceneAsync(2);
         Debug.Log($"Session Launched./n Session Data: [Lang={sessionData.language} Duration={sessionData.durationInSeconds} secs Speed={sessionData.speedOfSession} ]");
     }
-    
+    public void KillCurrentSession()
+    {
+        if (string.IsNullOrEmpty(currentSessionData.sessionCode))
+        {
+            Debug.Log($"Session kill failed. No Active session");
+            return;
+        }
+        var debugCode = currentSessionData.sessionCode;
+        currentSessionData = SessionDataHelper.GetEmptySession();
+        GameManager.instance.UnloadSceneAsync(2);
+        GameManager.instance.LoadSceneAsync(0);
+        Debug.Log($"Session Killed. Code = {debugCode}");
+    }
 }
