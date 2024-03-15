@@ -11,15 +11,32 @@ public class VirtualKeyboardManager : MonoBehaviour
 
     [SerializeField]
     private InputField inputField;
-
-    private void Start()
+    private void OnEnable()
     {
-        _virtualKeyboard = FindAnyObjectByType<OVRVirtualKeyboard>();
-        _virtualKeyboard.gameObject.TryGetComponent<OVRVirtualKeyboardInputFieldTextHandler>(out var inputFieldHandler);
+        GameManager.OnSceneLoaded += CacheKeyboardEssentials;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnSceneLoaded -= CacheKeyboardEssentials;
+    }
+
+    private void CacheKeyboardEssentials(int sceneIndex)
+    {
+        if(sceneIndex == 3)
+        {
+            CacheInput();
+        }
+    }
+
+    private void CacheInput()
+    {
+        _virtualKeyboard = GameObject.FindGameObjectWithTag("VirtualKeyBoard").GetComponent<OVRVirtualKeyboard>();
+        _virtualKeyboard.TryGetComponent<OVRVirtualKeyboardInputFieldTextHandler>(out var inputFieldHandler);
         inputFieldHandler.InputField = inputField;
     }
     private void Update()
     {
+        if (_virtualKeyboard == null) return;
         if(inputField.isFocused && _virtualKeyboard.gameObject.activeInHierarchy == false)
         {
             _virtualKeyboard.ChangeTextContext("");
