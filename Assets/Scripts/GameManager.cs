@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
             Debug.Log("Environmet Loaded");
         }
         else Destroy(gameObject);

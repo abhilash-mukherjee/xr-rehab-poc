@@ -7,17 +7,23 @@ using UnityEngine.UI;
 
 public class VirtualKeyboardManager : MonoBehaviour
 {
-    [SerializeField]
-    private OVRVirtualKeyboard virtualKeyboard;
+    private OVRVirtualKeyboard _virtualKeyboard;
 
     [SerializeField]
     private InputField inputField;
+
+    private void Start()
+    {
+        _virtualKeyboard = FindAnyObjectByType<OVRVirtualKeyboard>();
+        _virtualKeyboard.gameObject.TryGetComponent<OVRVirtualKeyboardInputFieldTextHandler>(out var inputFieldHandler);
+        inputFieldHandler.InputField = inputField;
+    }
     private void Update()
     {
-        if(inputField.isFocused && virtualKeyboard.gameObject.activeInHierarchy == false)
+        if(inputField.isFocused && _virtualKeyboard.gameObject.activeInHierarchy == false)
         {
-            virtualKeyboard.ChangeTextContext("");
-            virtualKeyboard.gameObject.SetActive(true);
+            _virtualKeyboard.ChangeTextContext("");
+            _virtualKeyboard.gameObject.SetActive(true);
             Debug.Log("**Keyboard enabled");
         }
 
