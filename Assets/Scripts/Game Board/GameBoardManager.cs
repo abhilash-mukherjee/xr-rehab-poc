@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class GameBoardManager : MonoBehaviour
     private bool isGameBoardPaused = false;
     private float beepGap;
     private System.Random random;
+    public delegate void BeepHandler(int btnId, bool isRed);
+    public static event BeepHandler OnBeep;
 
     private void Start()
     {
@@ -34,6 +37,7 @@ public class GameBoardManager : MonoBehaviour
     {
         int randomNumber = random.Next(1, 10); // Generate random integer between 1 and 9
         bool randomBoolean = (random.Next(0, 2) == 0); // Generate random boolean
+        OnBeep?.Invoke(randomNumber, randomBoolean);
         Debug.Log("Random Number: " + randomNumber + ", Random Boolean: " + randomBoolean);
     }
 }

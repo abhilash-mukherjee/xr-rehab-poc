@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 6482949834936360444}
   - component: {fileID: 1101972877982482631}
   - component: {fileID: 567362056000751522}
+  - component: {fileID: 3434092592837470445}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -442,7 +443,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 9056510154957839525}
         m_TargetAssemblyTypeName: AudioEmitter, Assembly-CSharp
         m_MethodName: EmitAudioEvent
         m_Mode: 3
@@ -454,33 +455,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8598368561900318257}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GamePlayManager, Assembly-CSharp
-        m_MethodName: StartGamePlay
+      - m_Target: {fileID: 7693768525237212867}
+        m_TargetAssemblyTypeName: SceneReloader, Assembly-CSharp
+        m_MethodName: ReloadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -490,6 +467,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3434092592837470445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183274691330106800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250e1f91ec3cdb84db37ce327d151e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5823112057190055142
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +570,8 @@ GameObject:
   - component: {fileID: 6741307600734204281}
   - component: {fileID: 3671178240616932913}
   - component: {fileID: 8045338579496773163}
+  - component: {fileID: 7693768525237212867}
+  - component: {fileID: 9056510154957839525}
   m_Layer: 5
   m_Name: Results Panael
   m_TagString: Untagged
@@ -652,6 +643,30 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7693768525237212867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598368561900318257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9b6a788bb38aa42bec76d5ae676dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9056510154957839525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598368561900318257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250e1f91ec3cdb84db37ce327d151e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9157058280138315934
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ public static class SessionDataHelper
         {
             sessionCode = sessionCode,
             language = "english",
-            durationInSeconds = 20,
-            beepGap = 5
+            durationInSeconds = 240,
+            beepGap = 40
         };
         return sessionData;
     }

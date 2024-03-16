@@ -9,7 +9,6 @@ public class SessionManager : MonoBehaviour
     {
         if (instance == null) instance = this;
         else Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
     public void LaunchSession(string sessionCode)
     {
@@ -34,8 +33,6 @@ public class SessionManager : MonoBehaviour
         }
         var debugCode = currentSessionData.sessionCode;
         currentSessionData = SessionDataHelper.GetEmptySession();
-        LauncherObject.SetActive(true);
-        GamePlayObject.SetActive(false);
         Debug.Log($"Session Killed. Code = {debugCode}");
     }
 }
