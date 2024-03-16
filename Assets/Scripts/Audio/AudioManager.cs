@@ -17,4 +17,9 @@ public class AudioManager : MonoBehaviour
         if (_audioSources == null || sourceIndex < 0 || sourceIndex >= _audioSources.Length) return;
         _audioSources[sourceIndex].Play();
     }
+    public void StopSource(int sourceIndex)
+    {
+        if (_audioSources == null || sourceIndex < 0 || sourceIndex >= _audioSources.Length) return;
+        _audioSources[sourceIndex].Stop();
+    }
 }

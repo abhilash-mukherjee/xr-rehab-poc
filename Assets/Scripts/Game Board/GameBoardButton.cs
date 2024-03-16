@@ -4,6 +4,8 @@ public class GameBoardButton : MonoBehaviour
 {
     [SerializeField] private int btnIndex;
     [SerializeField] private Material red, blue, normal;
+    public delegate void AnalyticsHandler();
+    public static event AnalyticsHandler OnMiss, OnError, OnSuccess;
     private MeshRenderer _meshRenderer;
     [SerializeField] private float animationDuration = 0.5f;
     [SerializeField] private float animationDistance = 0.18f;
@@ -32,6 +34,7 @@ public class GameBoardButton : MonoBehaviour
     {
         if (btnId != btnIndex)
         {
+            if (isActive) OnMiss?.Invoke();
             MakeBtnNormal();
         }
         else
@@ -77,12 +80,14 @@ public class GameBoardButton : MonoBehaviour
     private void Success()
     {
         AudioManager.instance.PlaySource(4);
+        OnSuccess?.Invoke();
+        
     }
 
     private void Failed()
     {
         AudioManager.instance.PlaySource(5);
-
+        OnError?.Invoke();
     }
 
     private System.Collections.IEnumerator AnimateButtonPress()

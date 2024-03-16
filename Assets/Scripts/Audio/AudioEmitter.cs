@@ -6,4 +6,8 @@ public class AudioEmitter : MonoBehaviour
     {
         AudioManager.instance.PlaySource(audioIndex);
     }
+    public void EmitStopAudioEvent(int audioIndex)
+    {
+        AudioManager.instance.StopSource(audioIndex);
+    }
 }

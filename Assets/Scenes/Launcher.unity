@@ -1339,6 +1339,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1153252979}
+        m_TargetAssemblyTypeName: AudioEmitter, Assembly-CSharp
+        m_MethodName: EmitAudioEvent
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &985897870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3185,6 +3197,63 @@ Transform:
   m_Father: {fileID: 670709417}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1709771037864522620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 164064308835585642, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_Name
+      value: SessionAnalyticsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25963002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.7180002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910723257072535278, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0278eaf202ad4447bc6c3fdf13360a0, type: 3}
 --- !u!1001 &2612651739309481145
 PrefabInstance:
   m_ObjectHideFlags: 0
