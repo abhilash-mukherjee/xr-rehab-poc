@@ -22,7 +22,7 @@ public class SessionManager : MonoBehaviour
         currentSessionData = sessionData;
         LauncherObject.SetActive(false);
         GamePlayObject.SetActive(true);
-        Debug.Log($"Session Launched./n Session Data: [Lang={sessionData.language} Duration={sessionData.durationInSeconds} secs Speed={sessionData.speedOfSession} ]");
+        Debug.Log($"Session Launched./n Session Data: [Lang={sessionData.language} Duration={sessionData.durationInSeconds} secs Speed={sessionData.beepGap} ]");
     }
 
     public void KillCurrentSession()

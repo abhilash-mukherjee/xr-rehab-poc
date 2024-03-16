@@ -18,5 +18,5 @@ public struct SessionData
     public string language;
     public int durationInSeconds;
     [Range(0,10)]
-    public float speedOfSession;
+    public float beepGap;
 }
