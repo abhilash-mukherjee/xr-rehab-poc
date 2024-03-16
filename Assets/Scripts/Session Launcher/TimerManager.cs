@@ -3,8 +3,8 @@ using System;
 
 public class TimerManager : MonoBehaviour
 {
-    public event Action onTimerEnd;
-
+    public delegate void TimerEndHandler();
+    public static event TimerEndHandler OnTimerEnd;
     private float currentTime;
     private float sessionTime;
     private bool isTimerRunning = false;
@@ -42,7 +42,7 @@ public class TimerManager : MonoBehaviour
         }
 
         isTimerRunning = false;
-        onTimerEnd?.Invoke();
+        OnTimerEnd?.Invoke();
     }
 
     private void UpdateTimeString()

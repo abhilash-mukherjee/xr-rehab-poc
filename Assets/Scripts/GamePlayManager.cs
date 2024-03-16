@@ -8,13 +8,15 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] TimerManager timerManager;
     [SerializeField] GameObject gameBoard, resultPanel;
     [SerializeField] GameBoardManager gameBoardManager;
+    public delegate void GamePlayHandler();
+    public static event GamePlayHandler OnGameplayStarted;
     private void OnEnable()
     {
-        timerManager.onTimerEnd += TimerEnd;
+        TimerManager.OnTimerEnd += TimerEnd;
     }
     private void OnDisable()
     {
-        timerManager.onTimerEnd -= TimerEnd;
+        TimerManager.OnTimerEnd -= TimerEnd;
     }
 
     private void TimerEnd()
@@ -28,5 +30,7 @@ public class GamePlayManager : MonoBehaviour
     {
         timerManager.StartTimer(SessionManager.instance.currentSessionData.durationInSeconds);
         gameBoard.SetActive(true);
+        OnGameplayStarted?.Invoke();
+
     }
 }
